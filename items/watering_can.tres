@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="GardenTool" load_steps=4 format=3 uid="uid://1n2qqrux4yy7"]
+
+[ext_resource type="Script" path="res://items/base/garden_tool.gd" id="1_1it00"]
+[ext_resource type="Texture2D" uid="uid://c04y6yki7pmal" path="res://graphics/items.png" id="1_83ghu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhjhd"]
+atlas = ExtResource("1_83ghu")
+region = Rect2(68, 51, 16, 16)
+
+[resource]
+script = ExtResource("1_1it00")
+item_name = "Watering Can"
+item_icon = SubResource("AtlasTexture_uhjhd")
+tooltip_description = "Watering your plants increases their harvest value"
+level = 1
+base_price = 5
+consumable = false
+auto_use = false
+max_stacks = 1
+cooldown = 5.0
+effects = ["set_watered(true)"]
+cursor_name_normal = "watering_can"
+cursor_name_clicked = "watering_can"

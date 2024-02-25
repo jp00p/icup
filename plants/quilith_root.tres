@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="BasePlant" load_steps=11 format=3 uid="uid://brxfmtrohn7wv"]
+
+[ext_resource type="Texture2D" uid="uid://xf7sm1lmakgw" path="res://graphics/crops.png" id="1_8sbtv"]
+[ext_resource type="Script" path="res://plants/base/base_plant.gd" id="2_rcr7e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryyrd"]
+atlas = ExtResource("1_8sbtv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8pm2"]
+atlas = ExtResource("1_8sbtv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqmx1"]
+atlas = ExtResource("1_8sbtv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t0ad"]
+atlas = ExtResource("1_8sbtv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oppsx"]
+atlas = ExtResource("1_8sbtv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxgnd"]
+atlas = ExtResource("1_8sbtv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyji1"]
+atlas = ExtResource("1_8sbtv")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gsod6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryyrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8pm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqmx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t0ad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oppsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxgnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyji1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_rcr7e")
+plant_name = "Quilith Root"
+graphics = SubResource("SpriteFrames_gsod6")
+growth_stage = 0
+growth_max_level = 6
+growth_times = [1, 2, 3, 4, 5, 6, 10]
+growth_requirements = []
+base_harvest_essence = 2
+base_harvest_essence_max = 4

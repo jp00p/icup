@@ -1,0 +1,202 @@
+[gd_scene load_steps=31 format=3 uid="uid://5l80ivlb62pi"]
+
+[ext_resource type="Texture2D" uid="uid://b8ykj8fakpdq2" path="res://graphics/weather/8. sky/100 pm.png" id="1_acsjn"]
+[ext_resource type="Script" path="res://ui/scripts/weather.gd" id="1_jdsqh"]
+[ext_resource type="Texture2D" uid="uid://c32rkataogqam" path="res://graphics/weather/3. window frame/frame 3.png" id="1_kfg42"]
+[ext_resource type="Texture2D" uid="uid://cqpwjqou8v7wh" path="res://graphics/weather/8. sky/600 am.png" id="1_uypp4"]
+[ext_resource type="Texture2D" uid="uid://dkxyj6vydk02l" path="res://graphics/weather/7. celestial/7.2 sun/sun 100 pm.png" id="2_0nok5"]
+[ext_resource type="Texture2D" uid="uid://cghlcjwjwj5it" path="res://graphics/weather/5. foreground scene/plains.png" id="3_3rk4e"]
+[ext_resource type="Texture2D" uid="uid://dtjl80hnwwm1s" path="res://graphics/weather/6. weather background/clouds day 2.png" id="3_avvhq"]
+[ext_resource type="Texture2D" uid="uid://ctvknkunxcqnp" path="res://graphics/weather/8. sky/200 pm.png" id="7_752t5"]
+[ext_resource type="Texture2D" uid="uid://cnj1n7njeythj" path="res://graphics/weather/8. sky/300 pm.png" id="8_nunyb"]
+[ext_resource type="Texture2D" uid="uid://cplqadu157iof" path="res://graphics/weather/8. sky/400 pm.png" id="9_uuor7"]
+[ext_resource type="Texture2D" uid="uid://dkh8as71kju2" path="res://graphics/weather/8. sky/500 pm.png" id="10_fnvgq"]
+[ext_resource type="Texture2D" uid="uid://bl8o3qwfk210q" path="res://graphics/weather/8. sky/600 pm.png" id="11_34ag8"]
+[ext_resource type="Texture2D" uid="uid://da3q0yicf5kcq" path="res://graphics/weather/8. sky/700 pm.png" id="12_6y42u"]
+[ext_resource type="Texture2D" uid="uid://c6vsdlc5uo4n7" path="res://graphics/weather/8. sky/800 pm.png" id="13_8ilps"]
+[ext_resource type="Texture2D" uid="uid://4xosqu0foce3" path="res://graphics/weather/8. sky/900 pm.png" id="14_3p5nf"]
+[ext_resource type="Texture2D" uid="uid://5si3hfr7mvdm" path="res://graphics/weather/8. sky/1000 pm.png" id="15_ytkov"]
+[ext_resource type="Texture2D" uid="uid://ccbu1swfh7dyw" path="res://graphics/weather/8. sky/1100 pm.png" id="16_vthht"]
+[ext_resource type="Texture2D" uid="uid://cwx1qmyqgl0p2" path="res://graphics/weather/8. sky/midnight.png" id="17_gnky2"]
+[ext_resource type="Texture2D" uid="uid://bqlyxchiwinay" path="res://graphics/weather/8. sky/100 am.png" id="18_3y6bt"]
+[ext_resource type="Texture2D" uid="uid://ddthmgsjvv8x6" path="res://graphics/weather/8. sky/200 am.png" id="19_arcy3"]
+[ext_resource type="Texture2D" uid="uid://bo5p0i5jbg7su" path="res://graphics/weather/8. sky/300 am.png" id="20_ny1mq"]
+[ext_resource type="Texture2D" uid="uid://cxjddpovbvj35" path="res://graphics/weather/8. sky/400 am.png" id="21_4tr1k"]
+[ext_resource type="Texture2D" uid="uid://cv68uf5srsucy" path="res://graphics/weather/8. sky/500 am.png" id="22_s0rmd"]
+[ext_resource type="Texture2D" uid="uid://cdp4mcbkkl1c0" path="res://graphics/weather/8. sky/700 am.png" id="24_xdom0"]
+[ext_resource type="Texture2D" uid="uid://dcwfxod71yh8g" path="res://graphics/weather/8. sky/800 am.png" id="25_altgn"]
+[ext_resource type="Texture2D" uid="uid://c8xehe1aq5l10" path="res://graphics/weather/8. sky/900 am.png" id="26_wthdj"]
+[ext_resource type="Texture2D" uid="uid://b6yjidh230hy5" path="res://graphics/weather/8. sky/1000 am.png" id="27_oswwl"]
+[ext_resource type="Texture2D" uid="uid://cefem82v8hcih" path="res://graphics/weather/8. sky/1100 am.png" id="28_jppe5"]
+[ext_resource type="Texture2D" uid="uid://b2tqenlswwl3q" path="res://graphics/weather/8. sky/noon.png" id="29_mx3j4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ew0nl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_3y6bt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_arcy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ny1mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4tr1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_s0rmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_uypp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xdom0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_altgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wthdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_oswwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jppe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mx3j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acsjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_752t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nunyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uuor7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fnvgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_34ag8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6y42u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8ilps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3p5nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ytkov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vthht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gnky2")
+}],
+"loop": false,
+"name": &"daycycle",
+"speed": 5.0
+}]
+
+[node name="Weather" type="Control"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 100.0
+script = ExtResource("1_jdsqh")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SkyRect" type="TextureRect" parent="UI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_acsjn")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Celestial" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0nok5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Background" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_avvhq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Foreground" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3rk4e")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Frame" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kfg42")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Animations" type="Node2D" parent="."]
+position = Vector2(84, 200)
+
+[node name="Sky" type="AnimatedSprite2D" parent="Animations"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_ew0nl")
+animation = &"daycycle"
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Tick" type="Timer" parent="Timers"]
+wait_time = 0.25
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Timers"]
+
+[connection signal="frame_changed" from="Animations/Sky" to="." method="_on_sky_frame_changed"]
+[connection signal="timeout" from="Timers/Tick" to="." method="_on_tick_timeout"]

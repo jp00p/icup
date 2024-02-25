@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BasePlant" load_steps=3 format=3 uid="uid://blks20f6p5ski"]
+
+[ext_resource type="Script" path="res://plants/base/base_plant.gd" id="1_akrvm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jilr6"]
+
+[resource]
+script = ExtResource("1_akrvm")
+plant_name = "Default Plant Name"
+graphics = SubResource("SpriteFrames_jilr6")
+growth_stage = 0
+growth_max_level = 6
+growth_times = [1, 2, 3, 4, 5, 6, 10]
+growth_requirements = []
+base_harvest_essence = 1
+base_harvest_essence_max = 1

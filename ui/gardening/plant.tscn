@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://jed03ern7jcg"]
+
+[ext_resource type="Script" path="res://ui/scripts/plant.gd" id="1_1hkhq"]
+[ext_resource type="Texture2D" uid="uid://svfj8xaxhb8c" path="res://graphics/fertilized.png" id="2_28ac1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrg58"]
+bg_color = Color(0.419608, 0.247059, 0.00784314, 0.105882)
+
+[node name="Plant" type="Control" groups=["garden_plant"]]
+clip_contents = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_1hkhq")
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lrg58")
+
+[node name="Fertilizer" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_28ac1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Image" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="GrowthTimer" type="Timer" parent="Container"]
+unique_name_in_owner = true
+wait_time = 0.75
+autostart = true
+
+[connection signal="timeout" from="Container/GrowthTimer" to="." method="_on_growth_timer_timeout"]

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="GardenTool" load_steps=4 format=3 uid="uid://c54wbhknkp46e"]
+
+[ext_resource type="Texture2D" uid="uid://deqbut51ieivo" path="res://graphics/stardew/fertilizer.png" id="1_7st6a"]
+[ext_resource type="Script" path="res://items/base/garden_tool.gd" id="1_nr6la"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qn2w"]
+atlas = ExtResource("1_7st6a")
+region = Rect2(0, 0, 56, 60)
+
+[resource]
+script = ExtResource("1_nr6la")
+item_name = "Fertilizer I"
+item_icon = SubResource("AtlasTexture_4qn2w")
+tooltip_description = "Increases plant quality"
+level = 1
+base_price = 10
+consumable = true
+auto_use = false
+max_stacks = 99
+cooldown = 0.0
+effects = ["set_fertilized(true)", "fertilize(ilvl)"]
+cursor_name_normal = "fertilizer"
+cursor_name_clicked = "fertilizer"

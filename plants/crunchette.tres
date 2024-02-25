@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="BasePlant" load_steps=11 format=3 uid="uid://csrhumq46f3eo"]
+
+[ext_resource type="Script" path="res://plants/base/base_plant.gd" id="1_726d2"]
+[ext_resource type="Texture2D" uid="uid://xf7sm1lmakgw" path="res://graphics/crops.png" id="1_o3ujm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f272i"]
+atlas = ExtResource("1_o3ujm")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36h0l"]
+atlas = ExtResource("1_o3ujm")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnt20"]
+atlas = ExtResource("1_o3ujm")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oc3r"]
+atlas = ExtResource("1_o3ujm")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foa4u"]
+atlas = ExtResource("1_o3ujm")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u08gm"]
+atlas = ExtResource("1_o3ujm")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o17j5"]
+atlas = ExtResource("1_o3ujm")
+region = Rect2(96, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ncds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f272i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36h0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnt20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oc3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foa4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u08gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o17j5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_726d2")
+plant_name = "Crunchette"
+graphics = SubResource("SpriteFrames_1ncds")
+growth_stage = 0
+growth_max_level = 6
+growth_times = [2, 2, 3, 3, 4, 4, 8]
+growth_requirements = []
+base_harvest_essence = 1
+base_harvest_essence_max = 1

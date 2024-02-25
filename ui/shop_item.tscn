@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://spsxf0vefv6u"]
+
+[ext_resource type="Texture2D" uid="uid://c04y6yki7pmal" path="res://graphics/items.png" id="1_2hnu3"]
+[ext_resource type="Script" path="res://ui/scripts/shop_item.gd" id="1_puhct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6un6"]
+atlas = ExtResource("1_2hnu3")
+region = Rect2(138, 104, 13, 15)
+
+[node name="ShopItem" type="PanelContainer"]
+custom_minimum_size = Vector2(240, 0)
+script = ExtResource("1_puhct")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Icon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_m6un6")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="ItemName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Item name"
+
+[node name="ItemDescription" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Item description can go in here"
+fit_content = true
+scroll_active = false
+
+[node name="Purchase" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Buy for 350"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Purchase" to="." method="_on_purchase_pressed"]

@@ -1,0 +1,557 @@
+[gd_scene load_steps=102 format=3 uid="uid://5l80ivlb62pi"]
+
+[ext_resource type="Texture2D" uid="uid://b8ykj8fakpdq2" path="res://graphics/weather/8. sky/100 pm.png" id="1_acsjn"]
+[ext_resource type="Script" path="res://ui/scripts/weather.gd" id="1_jdsqh"]
+[ext_resource type="Texture2D" uid="uid://c32rkataogqam" path="res://graphics/weather/3. window frame/frame 3.png" id="1_kfg42"]
+[ext_resource type="Texture2D" uid="uid://cqpwjqou8v7wh" path="res://graphics/weather/8. sky/600 am.png" id="1_uypp4"]
+[ext_resource type="Texture2D" uid="uid://dkxyj6vydk02l" path="res://graphics/weather/7. celestial/7.2 sun/sun 100 pm.png" id="2_0nok5"]
+[ext_resource type="Texture2D" uid="uid://cghlcjwjwj5it" path="res://graphics/weather/5. foreground scene/plains.png" id="3_3rk4e"]
+[ext_resource type="Texture2D" uid="uid://dtjl80hnwwm1s" path="res://graphics/weather/6. weather background/clouds day 2.png" id="3_avvhq"]
+[ext_resource type="Texture2D" uid="uid://ctvknkunxcqnp" path="res://graphics/weather/8. sky/200 pm.png" id="7_752t5"]
+[ext_resource type="Texture2D" uid="uid://cnj1n7njeythj" path="res://graphics/weather/8. sky/300 pm.png" id="8_nunyb"]
+[ext_resource type="Texture2D" uid="uid://cplqadu157iof" path="res://graphics/weather/8. sky/400 pm.png" id="9_uuor7"]
+[ext_resource type="Texture2D" uid="uid://dkh8as71kju2" path="res://graphics/weather/8. sky/500 pm.png" id="10_fnvgq"]
+[ext_resource type="Texture2D" uid="uid://bl8o3qwfk210q" path="res://graphics/weather/8. sky/600 pm.png" id="11_34ag8"]
+[ext_resource type="Texture2D" uid="uid://da3q0yicf5kcq" path="res://graphics/weather/8. sky/700 pm.png" id="12_6y42u"]
+[ext_resource type="Texture2D" uid="uid://c6vsdlc5uo4n7" path="res://graphics/weather/8. sky/800 pm.png" id="13_8ilps"]
+[ext_resource type="Texture2D" uid="uid://4xosqu0foce3" path="res://graphics/weather/8. sky/900 pm.png" id="14_3p5nf"]
+[ext_resource type="Texture2D" uid="uid://5si3hfr7mvdm" path="res://graphics/weather/8. sky/1000 pm.png" id="15_ytkov"]
+[ext_resource type="Texture2D" uid="uid://ccbu1swfh7dyw" path="res://graphics/weather/8. sky/1100 pm.png" id="16_vthht"]
+[ext_resource type="Texture2D" uid="uid://cwx1qmyqgl0p2" path="res://graphics/weather/8. sky/midnight.png" id="17_gnky2"]
+[ext_resource type="Texture2D" uid="uid://bqlyxchiwinay" path="res://graphics/weather/8. sky/100 am.png" id="18_3y6bt"]
+[ext_resource type="Texture2D" uid="uid://ddthmgsjvv8x6" path="res://graphics/weather/8. sky/200 am.png" id="19_arcy3"]
+[ext_resource type="Texture2D" uid="uid://bo5p0i5jbg7su" path="res://graphics/weather/8. sky/300 am.png" id="20_ny1mq"]
+[ext_resource type="Texture2D" uid="uid://cxjddpovbvj35" path="res://graphics/weather/8. sky/400 am.png" id="21_4tr1k"]
+[ext_resource type="Texture2D" uid="uid://cv68uf5srsucy" path="res://graphics/weather/8. sky/500 am.png" id="22_s0rmd"]
+[ext_resource type="Texture2D" uid="uid://cdp4mcbkkl1c0" path="res://graphics/weather/8. sky/700 am.png" id="24_xdom0"]
+[ext_resource type="Texture2D" uid="uid://dcwfxod71yh8g" path="res://graphics/weather/8. sky/800 am.png" id="25_altgn"]
+[ext_resource type="Texture2D" uid="uid://c8xehe1aq5l10" path="res://graphics/weather/8. sky/900 am.png" id="26_wthdj"]
+[ext_resource type="Texture2D" uid="uid://b6yjidh230hy5" path="res://graphics/weather/8. sky/1000 am.png" id="27_oswwl"]
+[ext_resource type="Texture2D" uid="uid://cefem82v8hcih" path="res://graphics/weather/8. sky/1100 am.png" id="28_jppe5"]
+[ext_resource type="Texture2D" uid="uid://b2tqenlswwl3q" path="res://graphics/weather/8. sky/noon.png" id="29_mx3j4"]
+[ext_resource type="Texture2D" uid="uid://oqeu3qy5l63a" path="res://graphics/weather/7. celestial/7.2 sun/sun 600 am.png" id="30_fcn1a"]
+[ext_resource type="Texture2D" uid="uid://c0dq3es1kk1lh" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 700 pm.png" id="30_tb1ry"]
+[ext_resource type="Texture2D" uid="uid://dj2h3ectxhqkp" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 800 pm.png" id="31_acon8"]
+[ext_resource type="Texture2D" uid="uid://cu44ur75wom3q" path="res://graphics/weather/7. celestial/7.2 sun/sun 700 am.png" id="31_kkrl2"]
+[ext_resource type="Texture2D" uid="uid://b6h6jmmrppp25" path="res://graphics/weather/7. celestial/7.2 sun/sun 800 am.png" id="32_mkhjj"]
+[ext_resource type="Texture2D" uid="uid://dvwanl2x0tfny" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 900 pm.png" id="32_ygek0"]
+[ext_resource type="Texture2D" uid="uid://bu8xoj7qohyah" path="res://graphics/weather/7. celestial/7.2 sun/sun 900 am.png" id="33_gj8oi"]
+[ext_resource type="Texture2D" uid="uid://8vuymeqbpctl" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 1000 pm.png" id="33_yiej8"]
+[ext_resource type="Texture2D" uid="uid://y2vmmegkcccx" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 1100 pm.png" id="34_dyjuv"]
+[ext_resource type="Texture2D" uid="uid://bhq5ecc5xr4h5" path="res://graphics/weather/7. celestial/7.2 sun/sun 1000 am.png" id="34_vrg1v"]
+[ext_resource type="Texture2D" uid="uid://bhj02w1y16akm" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon midnight.png" id="35_axe0n"]
+[ext_resource type="Texture2D" uid="uid://d0fmgearq328w" path="res://graphics/weather/7. celestial/7.2 sun/sun 1100 am.png" id="35_vrya2"]
+[ext_resource type="Texture2D" uid="uid://csg7ongnabgv1" path="res://graphics/weather/7. celestial/7.2 sun/sun noon.png" id="36_08o48"]
+[ext_resource type="Texture2D" uid="uid://bcjna05jjdegx" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 100 am.png" id="36_e6dxl"]
+[ext_resource type="Texture2D" uid="uid://b3f1xawxnaajg" path="res://graphics/weather/7. celestial/7.2 sun/sun 200 pm.png" id="37_7s63r"]
+[ext_resource type="Texture2D" uid="uid://dmpsjyjtc41r1" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 200 am.png" id="37_i0ayw"]
+[ext_resource type="Texture2D" uid="uid://d32qw5jnflddx" path="res://graphics/weather/7. celestial/7.2 sun/sun 300 pm.png" id="38_si1vs"]
+[ext_resource type="Texture2D" uid="uid://blkrqpphhwavh" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 300 am.png" id="38_ykbm4"]
+[ext_resource type="Texture2D" uid="uid://lx6h5crl1bpx" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 400 am.png" id="39_2sjja"]
+[ext_resource type="Texture2D" uid="uid://di7rvpftrao0i" path="res://graphics/weather/7. celestial/7.2 sun/sun 400 pm.png" id="39_o1qw3"]
+[ext_resource type="Texture2D" uid="uid://dumj5ohio7nga" path="res://graphics/weather/7. celestial/7.1 moon/moon (phase-agnostic)/moon 500 am.png" id="40_jlwo8"]
+[ext_resource type="Texture2D" uid="uid://bygalmiv8rco1" path="res://graphics/weather/7. celestial/7.2 sun/sun 500 pm.png" id="40_n6tbh"]
+[ext_resource type="Texture2D" uid="uid://ng1k5wdnnxvb" path="res://graphics/weather/7. celestial/7.2 sun/sun 600 pm.png" id="52_73t7b"]
+[ext_resource type="Texture2D" uid="uid://bxs43axn2ihnj" path="res://graphics/weather/7. celestial/7.3 stars/stars 600 pm.png" id="53_hkwsw"]
+[ext_resource type="Texture2D" uid="uid://yfi5d1ksgtoa" path="res://graphics/weather/7. celestial/7.3 stars/stars 700 pm.png" id="54_h3bns"]
+[ext_resource type="Texture2D" uid="uid://db3a35ga2lgk1" path="res://graphics/weather/7. celestial/7.3 stars/stars 800 pm.png" id="55_yvknf"]
+[ext_resource type="Texture2D" uid="uid://bb0h7a52pggd7" path="res://graphics/weather/7. celestial/7.3 stars/stars 900 pm.png" id="56_l5yr7"]
+[ext_resource type="Texture2D" uid="uid://0s5be1ytfc0h" path="res://graphics/weather/7. celestial/7.3 stars/stars 1000 pm.png" id="57_2j4bw"]
+[ext_resource type="Texture2D" uid="uid://udlywcogbh7b" path="res://graphics/weather/7. celestial/7.3 stars/stars 1100 pm.png" id="58_sy6b2"]
+[ext_resource type="Texture2D" uid="uid://byl5potkj5w4j" path="res://graphics/weather/7. celestial/7.3 stars/stars midnight.png" id="59_km4qb"]
+[ext_resource type="Texture2D" uid="uid://cggym63kqiqra" path="res://graphics/weather/7. celestial/7.3 stars/stars 100 am.png" id="60_qyl5i"]
+[ext_resource type="Texture2D" uid="uid://cd1bmhmpjvtel" path="res://graphics/weather/7. celestial/7.3 stars/stars 200 am.png" id="61_nlorm"]
+[ext_resource type="Texture2D" uid="uid://bvqi2jxfdk3nl" path="res://graphics/weather/7. celestial/7.3 stars/stars 300 am.png" id="62_g38fy"]
+[ext_resource type="Texture2D" uid="uid://dirpxgwduiupt" path="res://graphics/weather/7. celestial/7.3 stars/stars 400 am.png" id="63_l2uem"]
+[ext_resource type="Texture2D" uid="uid://453xlh6cmnrh" path="res://graphics/weather/7. celestial/7.3 stars/stars 500 am.png" id="64_66eau"]
+[ext_resource type="Texture2D" uid="uid://b2elxvuwq33bd" path="res://graphics/weather/7. celestial/7.3 stars/stars 600 am.png" id="65_pcpxg"]
+[ext_resource type="Texture2D" uid="uid://c5qdqu13lpxcm" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #1.png" id="66_o0uhh"]
+[ext_resource type="Texture2D" uid="uid://dpg0jbk4y4bsx" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #2.png" id="67_0bdno"]
+[ext_resource type="Texture2D" uid="uid://cnyty5gk2mmcm" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #3.png" id="68_lvk3u"]
+[ext_resource type="Texture2D" uid="uid://dopyh0g41x1dx" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #4.png" id="69_oj024"]
+[ext_resource type="Texture2D" uid="uid://q3jv6bka062t" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #5.png" id="70_yc46x"]
+[ext_resource type="Texture2D" uid="uid://b1r8d3y7opd7r" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #6.png" id="71_urfpi"]
+[ext_resource type="Texture2D" uid="uid://dke6b2mnjucj1" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #7.png" id="72_gdkil"]
+[ext_resource type="Texture2D" uid="uid://b2ygq4aanmsow" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #8.png" id="73_0xt15"]
+[ext_resource type="Texture2D" uid="uid://dbir7tt1cyd8s" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #9.png" id="74_ldrqh"]
+[ext_resource type="Texture2D" uid="uid://obi0v2xcfpq4" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #10.png" id="75_xk831"]
+[ext_resource type="Texture2D" uid="uid://cyt7glweinudn" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #11.png" id="76_w7xg0"]
+[ext_resource type="Texture2D" uid="uid://cf46ci2inpp8c" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #12.png" id="77_fa66v"]
+[ext_resource type="Texture2D" uid="uid://btwc2pt46jkuh" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #13.png" id="78_5lnjs"]
+[ext_resource type="Texture2D" uid="uid://damr3gj1ap7yl" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #14.png" id="79_f6wj7"]
+[ext_resource type="Texture2D" uid="uid://hicg3l3fdiic" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #15.png" id="80_ku65g"]
+[ext_resource type="Texture2D" uid="uid://cqtjvqtivvssq" path="res://graphics/weather/4. weather foreground/rain animation/rainfall frame #16.png" id="81_lkwkt"]
+[ext_resource type="Texture2D" uid="uid://bevwotnwlfuwu" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #1.png" id="82_atkdd"]
+[ext_resource type="Texture2D" uid="uid://dvmkcluypvwhx" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #2.png" id="83_pgwwk"]
+[ext_resource type="Texture2D" uid="uid://cpfajboigkef2" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #3.png" id="84_vhrh4"]
+[ext_resource type="Texture2D" uid="uid://casu1hiie0iap" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #4.png" id="85_k34oa"]
+[ext_resource type="Texture2D" uid="uid://qsfbw48iv8af" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #5.png" id="86_wk8nl"]
+[ext_resource type="Texture2D" uid="uid://bd8ptkhd1tiij" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #6.png" id="87_rnev7"]
+[ext_resource type="Texture2D" uid="uid://5luea10kq4vq" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #7.png" id="88_1gsrd"]
+[ext_resource type="Texture2D" uid="uid://bwnlq885logwv" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #8.png" id="89_cjb11"]
+[ext_resource type="Texture2D" uid="uid://dsu47x2egevro" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #9.png" id="90_ggafs"]
+[ext_resource type="Texture2D" uid="uid://cni4yiu2afvqi" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #10.png" id="91_psmea"]
+[ext_resource type="Texture2D" uid="uid://csb0iluk4pl3w" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #11.png" id="92_pndwd"]
+[ext_resource type="Texture2D" uid="uid://dfkl4tf2r3tom" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #12.png" id="93_s1kwm"]
+[ext_resource type="Texture2D" uid="uid://c684ksqk613jq" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #13.png" id="94_hj3jb"]
+[ext_resource type="Texture2D" uid="uid://btykb4etfnxqj" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #14.png" id="95_nlnoa"]
+[ext_resource type="Texture2D" uid="uid://cdsygnhndmgp4" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #15.png" id="96_2txtc"]
+[ext_resource type="Texture2D" uid="uid://xgnyxxhitso1" path="res://graphics/weather/4. weather foreground/snow animation/snow frame #16.png" id="97_5fbls"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ew0nl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_3y6bt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_arcy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ny1mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4tr1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_s0rmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_uypp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xdom0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_altgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wthdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_oswwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jppe5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mx3j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_acsjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_752t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nunyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_uuor7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fnvgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_34ag8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6y42u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8ilps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3p5nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ytkov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_vthht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gnky2")
+}],
+"loop": false,
+"name": &"daycycle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ic0y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_tb1ry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_acon8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ygek0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_yiej8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dyjuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_axe0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_e6dxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_i0ayw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ykbm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_2sjja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_jlwo8")
+}],
+"loop": true,
+"name": &"moon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_fcn1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kkrl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_mkhjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_gj8oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_vrg1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_vrya2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_08o48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0nok5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_7s63r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_si1vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_o1qw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_n6tbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_73t7b")
+}],
+"loop": true,
+"name": &"sun",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ehqqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_hkwsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_h3bns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_yvknf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_l5yr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_2j4bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_sy6b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_km4qb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_qyl5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_nlorm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_g38fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_l2uem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_66eau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_pcpxg")
+}],
+"loop": true,
+"name": &"stars",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_evuxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66_o0uhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_0bdno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_lvk3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_oj024")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_yc46x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_urfpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_gdkil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_0xt15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ldrqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_xk831")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_w7xg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_fa66v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_5lnjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_f6wj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_ku65g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_lkwkt")
+}],
+"loop": true,
+"name": &"rain",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("82_atkdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_pgwwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_vhrh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_k34oa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_wk8nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_rnev7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_1gsrd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_cjb11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_ggafs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_psmea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_pndwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_s1kwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_hj3jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_nlnoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_2txtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_5fbls")
+}],
+"loop": true,
+"name": &"snow",
+"speed": 15.0
+}]
+
+[node name="Weather" type="Control"]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+script = ExtResource("1_jdsqh")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Textures" type="Control" parent="UI/VBoxContainer"]
+custom_minimum_size = Vector2(192, 116)
+layout_mode = 2
+
+[node name="SkyRect" type="TextureRect" parent="UI/VBoxContainer/Textures"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_acsjn")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="StarsRect" type="TextureRect" parent="UI/VBoxContainer/Textures"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0nok5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CelestialRect" type="TextureRect" parent="UI/VBoxContainer/Textures"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0nok5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Background" type="TextureRect" parent="UI/VBoxContainer/Textures"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_avvhq")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Foreground" type="TextureRect" parent="UI/VBoxContainer/Textures"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3rk4e")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Frame" type="TextureRect" parent="UI/VBoxContainer/Textures"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kfg42")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1:00PM
+Clear"
+horizontal_alignment = 1
+
+[node name="Animations" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(84, 200)
+
+[node name="Sky" type="AnimatedSprite2D" parent="Animations"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_ew0nl")
+animation = &"daycycle"
+frame = 23
+
+[node name="Celestial" type="AnimatedSprite2D" parent="Animations"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_2ic0y")
+animation = &"moon"
+
+[node name="Stars" type="AnimatedSprite2D" parent="Animations"]
+sprite_frames = SubResource("SpriteFrames_ehqqj")
+animation = &"stars"
+
+[node name="Weather" type="AnimatedSprite2D" parent="Animations"]
+sprite_frames = SubResource("SpriteFrames_evuxi")
+animation = &"rain"
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Tick" type="Timer" parent="Timers"]
+wait_time = 0.25
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Timers"]
+
+[connection signal="frame_changed" from="Animations/Sky" to="." method="_on_sky_frame_changed"]
+[connection signal="frame_changed" from="Animations/Celestial" to="." method="_on_celestial_frame_changed"]
+[connection signal="frame_changed" from="Animations/Stars" to="." method="_on_stars_frame_changed"]

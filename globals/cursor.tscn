@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://jkfb8qoqk0s0"]
+
+[ext_resource type="Texture2D" uid="uid://owxcv55imw0f" path="res://graphics/cursor_click.png" id="1_2tw4q"]
+[ext_resource type="Texture2D" uid="uid://xpjapahi6qgr" path="res://graphics/cursor_default.png" id="1_jx264"]
+[ext_resource type="Script" path="res://globals/scripts/cursor.gd" id="3_bfhvc"]
+[ext_resource type="Texture2D" uid="uid://btjpvxfjceqaj" path="res://graphics/cursor_watering_can.png" id="3_hag2q"]
+[ext_resource type="Texture2D" uid="uid://deqbut51ieivo" path="res://graphics/stardew/fertilizer.png" id="3_tji1y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woqb1"]
+atlas = ExtResource("3_tji1y")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ksijx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2tw4q")
+}],
+"loop": true,
+"name": &"clicked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jx264")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woqb1")
+}],
+"loop": true,
+"name": &"fertilizer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hag2q")
+}],
+"loop": true,
+"name": &"watering_can",
+"speed": 5.0
+}]
+
+[node name="Cursor" type="AnimatedSprite2D"]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ksijx")
+animation = &"fertilizer"
+centered = false
+script = ExtResource("3_bfhvc")

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BaseResource" load_steps=2 format=3 uid="uid://dl0c2jlly6hf3"]
+
+[ext_resource type="Script" path="res://resources/base/base_resource.gd" id="1_ku7kc"]
+
+[resource]
+script = ExtResource("1_ku7kc")
+title = "Money"
+maximum = 1000.0
+starting_value = 100.0
+speed_multiplier = 1.0
+gain_multiplier = 1.0
+reset_on_fill = false
+bounce_fill = false
+on_timer = false
+autostart = false
+timeout = 1.0
+speed = 1.0
+per_tick = 1.0
+bar_bg = Color(0, 0, 0, 1)
+bar_fg = Color(1, 0.894118, 0, 1)
+black_text = true
+text_outline = true
+rainbow_fg = null

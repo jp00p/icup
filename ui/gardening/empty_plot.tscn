@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://jwdanggucn03"]
+
+[ext_resource type="Script" path="res://ui/scripts/empty_plot.gd" id="1_n7sxv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yriax"]
+bg_color = Color(0.294118, 0.188235, 0.0352941, 0.611765)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="EmptyPlot" type="Control"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 64.0
+offset_bottom = 64.0
+script = ExtResource("1_n7sxv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yriax")

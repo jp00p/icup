@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh3b53a0encoj"]
+
+[ext_resource type="Script" path="res://ui/scripts/cooldown_button.gd" id="1_ayoel"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_882go"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xywd7"]
+bg_color = Color(0.25098, 0.25098, 0.25098, 1)
+
+[node name="CooldownButton" type="Button"]
+custom_minimum_size = Vector2(196, 0)
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Cooldown Button"
+script = ExtResource("1_ayoel")
+
+[node name="CooldownBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_882go")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xywd7")
+value = 50.0
+show_percentage = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ButtonText" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cooldown button"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

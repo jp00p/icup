@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="BasePlant" load_steps=11 format=3 uid="uid://c8jxjugwf82w8"]
+
+[ext_resource type="Texture2D" uid="uid://xf7sm1lmakgw" path="res://graphics/crops.png" id="1_skuxu"]
+[ext_resource type="Script" path="res://plants/base/base_plant.gd" id="2_x57k7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txexh"]
+atlas = ExtResource("1_skuxu")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4b5v"]
+atlas = ExtResource("1_skuxu")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h36wa"]
+atlas = ExtResource("1_skuxu")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44nh3"]
+atlas = ExtResource("1_skuxu")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uqlu"]
+atlas = ExtResource("1_skuxu")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5gss"]
+atlas = ExtResource("1_skuxu")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjicv"]
+atlas = ExtResource("1_skuxu")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pobdj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txexh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4b5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h36wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44nh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uqlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5gss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjicv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_x57k7")
+plant_name = "Azurium Bean"
+graphics = SubResource("SpriteFrames_pobdj")
+growth_stage = 0
+growth_max_level = 2
+growth_times = [0.1, 0.1, 0.1]
+growth_requirements = []
+base_harvest_essence = 1
+base_harvest_essence_max = 2

@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://d36uaignad4pv"]
+
+[ext_resource type="Script" path="res://ui/scripts/harvest_shop.gd" id="1_tmxi2"]
+
+[node name="HarvestShop" type="Control" groups=["game_screen"]]
+layout_mode = 3
+anchor_right = 0.773
+anchor_bottom = 1.0
+offset_right = 0.447937
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmxi2")
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Container"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Container/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ye Olde Harvest Shop"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Container/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopGrid" type="GridContainer" parent="Container/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 3

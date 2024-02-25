@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://goen6u28qhif"]
+
+[ext_resource type="Script" path="res://ui/scripts/tooltip.gd" id="1_8pv17"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bwvjt"]
+
+[node name="Tooltip" type="PanelContainer"]
+custom_minimum_size = Vector2(196, 32)
+offset_right = 196.0
+offset_bottom = 64.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bwvjt")
+script = ExtResource("1_8pv17")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(192, 64)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "Example tooltip content and some more tooltip text here"
+fit_content = true
+scroll_active = false

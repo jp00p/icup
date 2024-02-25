@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://jed03ern7jcg"]
+
+[ext_resource type="Script" path="res://ui/scripts/plant.gd" id="1_1hkhq"]
+
+[node name="Plant" type="Control"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_1hkhq")
+
+[node name="WaterIndicator" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0.298039)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="WaterIndicator"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+expand_mode = 2
+stretch_mode = 5
+
+[node name="GrowthTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.75
+autostart = true
+
+[connection signal="timeout" from="GrowthTimer" to="." method="_on_growth_timer_timeout"]

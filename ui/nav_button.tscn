@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd6fmemoqfw07"]
+
+[ext_resource type="Script" path="res://ui/scripts/nav_button.gd" id="1_3wheo"]
+
+[node name="NavButton" type="Control" groups=["nav_item"]]
+custom_minimum_size = Vector2(192, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 192.0
+offset_bottom = 32.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+script = ExtResource("1_3wheo")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "Navigation item"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -33,7 +33,7 @@ mouse_cursor/custom_image="res://graphics/cursor_default.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/script_panel_plus/plugin.cfg")
+enabled=PackedStringArray("res://addons/script_panel_plus/plugin.cfg", "res://addons/weighted_choice/plugin.cfg")
 
 [filesystem]
 

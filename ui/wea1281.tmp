@@ -370,7 +370,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"rain",
-"speed": 15.0
+"speed": 0.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -440,11 +440,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"cloudy",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
@@ -543,6 +538,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_avvhq")
 expand_mode = 2
 stretch_mode = 5
 
@@ -554,18 +550,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_3rk4e")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="WeatherRect" type="TextureRect" parent="UI/VBoxContainer/Textures"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_avvhq")
 expand_mode = 2
 stretch_mode = 5
 
@@ -614,7 +598,7 @@ animation = &"rain"
 [node name="Clouds" type="AnimatedSprite2D" parent="Animations"]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mc7tt")
-animation = &"overcast"
+animation = &"partly_cloudy"
 
 [node name="Timers" type="Node" parent="."]
 
@@ -627,6 +611,3 @@ autostart = true
 [connection signal="frame_changed" from="Animations/Sky" to="." method="_on_sky_frame_changed"]
 [connection signal="frame_changed" from="Animations/Celestial" to="." method="_on_celestial_frame_changed"]
 [connection signal="frame_changed" from="Animations/Stars" to="." method="_on_stars_frame_changed"]
-[connection signal="frame_changed" from="Animations/Weather" to="." method="_on_weather_frame_changed"]
-[connection signal="animation_changed" from="Animations/Clouds" to="." method="_on_clouds_animation_changed"]
-[connection signal="frame_changed" from="Animations/Clouds" to="." method="_on_clouds_frame_changed"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://foabjvwud826"]
+
+[ext_resource type="Script" path="res://ui/scripts/gnome_storage.gd" id="1_70rpx"]
+[ext_resource type="Texture2D" uid="uid://c6ha3rw5o7hlr" path="res://graphics/all_gnomes.png" id="2_uwnrl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ao2i"]
+atlas = ExtResource("2_uwnrl")
+region = Rect2(32, 33, 32, 32)
+
+[node name="GnomeStorage" type="Panel" groups=["game_screen"]]
+clip_contents = true
+custom_minimum_size = Vector2(792, 684)
+anchors_preset = -1
+anchor_right = 0.773
+anchor_bottom = 0.891
+offset_right = -791.552
+offset_bottom = -684.288
+script = ExtResource("1_70rpx")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="GnomePile" type="FlowContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+alignment = 1
+
+[node name="GnomeGraphic" type="TextureRect" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_5ao2i")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.5
+offset_right = 156.5
+offset_bottom = 108.0
+grow_horizontal = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Gnome storage"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "You have a burlap sack"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer2/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Your sack can hold 100 gnomes"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer2/VBoxContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Upgrade"

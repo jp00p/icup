@@ -1,16 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctd7ekheds48w"]
 
-[ext_resource type="Script" path="res://ui/scripts/the_garden.gd" id="1_ca8qy"]
+[ext_resource type="Script" path="res://ui/scripts/garden_bed.gd" id="1_ca8qy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30uf0"]
 bg_color = Color(0, 0.701961, 0, 1)
 
-[node name="GardenPlot" type="Control"]
+[node name="GardenBed" type="Control"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0
 offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_ca8qy")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -32,6 +34,8 @@ theme_override_constants/margin_bottom = 8
 [node name="Plots" type="GridContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/h_separation = 7
 theme_override_constants/v_separation = 6
-columns = 11
+columns = 3

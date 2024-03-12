@@ -2,8 +2,10 @@ extends Resource
 class_name BaseResource
 
 @export var title:String = ""
-@export var maximum:float = 0.0 : set = set_maximum
-@export var starting_value:float = 0.0
+@export var maximum:int = 0 : set = set_maximum
+@export var starting_value:int = 0
+@export var total:int = 0 : set = set_total
+
 @export var speed_multiplier:float = 1.0 : set = set_speed_mult
 @export var gain_multiplier:float = 1.0 : set = set_gain_mult
 
@@ -15,8 +17,7 @@ class_name BaseResource
 @export var autostart:bool = true
 @export var timeout:float = 1.0
 @export var speed:float = 1.0 : set = set_speed
-@export var per_tick:float = 1.0 : set = set_per_tick
-
+@export var per_tick:int = 1 : set = set_per_tick
 
 @export_category("UI Stuff")
 @export var bar_bg:Color = Color("Black")
@@ -25,7 +26,6 @@ class_name BaseResource
 @export var text_outline:bool = false
 @export var rainbow_fg:bool = false
 
-var total:float = 0.0 : set = set_total
 var timer = null
 
 signal resource_empty
@@ -41,12 +41,11 @@ func tick():
 
 func set_total(val):
     total = val
-    if maximum != 0:
-        if total >= maximum:
-            total = maximum
-            resource_full.emit()
-            if bounce_fill:
-                self.per_tick = -per_tick
+    if maximum > 0 and total >= maximum:
+        total = maximum
+        resource_full.emit()
+        if bounce_fill:
+            self.per_tick = -per_tick
     if total < 0:
         total = 0
         resource_empty.emit()

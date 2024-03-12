@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cylluworbostq"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cylluworbostq"]
 
 [ext_resource type="FontFile" uid="uid://doeocc4jhnfnw" path="res://fonts/Habbo.ttf" id="1_jp3kl"]
 
@@ -107,6 +107,20 @@ shadow_offset = Vector2(1, 1)
 anti_aliasing = false
 anti_aliasing_size = 0.01
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apa16"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.156863, 0.2, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y37x8"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.188235, 0.239216, 0.25098, 1)
+
 [resource]
 default_font = ExtResource("1_jp3kl")
 default_font_size = 30
@@ -135,3 +149,5 @@ MarginContainer/constants/margin_bottom = 8
 MarginContainer/constants/margin_left = 8
 MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 8
+Panel/styles/panel = SubResource("StyleBoxFlat_apa16")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_y37x8")

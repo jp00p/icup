@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtq0ye7vw4if3"]
+
+[ext_resource type="Script" path="res://ui/scripts/construction_project_row.gd" id="1_5swu1"]
+
+[node name="ConstructionProjectRow" type="PanelContainer"]
+custom_minimum_size = Vector2(698, 0)
+script = ExtResource("1_5swu1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Build" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "10 gnomes"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ProjectName" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "Rat farm"
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(198, 0)
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 22
+text = "You don't milk these rats even though you really want to"
+fit_content = true

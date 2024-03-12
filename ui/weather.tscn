@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c32rkataogqam" path="res://graphics/weather/3. window frame/frame 3.png" id="1_kfg42"]
 [ext_resource type="Texture2D" uid="uid://cqpwjqou8v7wh" path="res://graphics/weather/8. sky/600 am.png" id="1_uypp4"]
 [ext_resource type="Texture2D" uid="uid://dkxyj6vydk02l" path="res://graphics/weather/7. celestial/7.2 sun/sun 100 pm.png" id="2_0nok5"]
-[ext_resource type="Texture2D" uid="uid://cghlcjwjwj5it" path="res://graphics/weather/5. foreground scene/plains.png" id="3_3rk4e"]
 [ext_resource type="Texture2D" uid="uid://dtjl80hnwwm1s" path="res://graphics/weather/6. weather background/clouds day 2.png" id="3_avvhq"]
+[ext_resource type="Texture2D" uid="uid://cghlcjwjwj5it" path="res://graphics/weather/5. foreground scene/plains.png" id="4_uwkji"]
 [ext_resource type="Texture2D" uid="uid://ctvknkunxcqnp" path="res://graphics/weather/8. sky/200 pm.png" id="7_752t5"]
 [ext_resource type="Texture2D" uid="uid://cnj1n7njeythj" path="res://graphics/weather/8. sky/300 pm.png" id="8_nunyb"]
 [ext_resource type="Texture2D" uid="uid://cplqadu157iof" path="res://graphics/weather/8. sky/400 pm.png" id="9_uuor7"]
@@ -553,7 +553,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_3rk4e")
+texture = ExtResource("4_uwkji")
 expand_mode = 2
 stretch_mode = 5
 
@@ -589,6 +589,7 @@ horizontal_alignment = 1
 
 [node name="Animations" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 position = Vector2(84, 200)
 
 [node name="Sky" type="AnimatedSprite2D" parent="Animations"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8u5g4iaau7u4" path="res://ui/bar.tscn" id="1_jc4p7"]
 [ext_resource type="Resource" uid="uid://bgomehkfdrew2" path="res://resources/harvest_essence.tres" id="2_jt4u4"]
-[ext_resource type="PackedScene" uid="uid://ctd7ekheds48w" path="res://ui/gardening/the_garden.tscn" id="3_biefs"]
+[ext_resource type="PackedScene" uid="uid://ctd7ekheds48w" path="res://ui/gardening/garden_bed.tscn" id="3_biefs"]
 
 [node name="GameScreen" type="Control" groups=["game_screen"]]
 custom_minimum_size = Vector2(832, 704)

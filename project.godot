@@ -13,14 +13,18 @@ config_version=5
 config/name="icup"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
 [autoload]
 
-Player="*res://globals/scripts/player.gd"
+Flags="*res://globals/scripts/flags.gd"
 Stats="*res://globals/scripts/stats.gd"
 Signals="*res://globals/scripts/signals.gd"
 Globals="*res://globals/scripts/globals.gd"
+Player="*res://globals/scripts/player.gd"
 Cursor="*res://globals/cursor.tscn"
 
 [display]
@@ -39,6 +43,10 @@ enabled=PackedStringArray("res://addons/script_panel_plus/plugin.cfg", "res://ad
 
 import/blender/enabled=false
 import/fbx/enabled=false
+
+[gui]
+
+theme/custom="res://ui/theme/base_theme.tres"
 
 [input]
 

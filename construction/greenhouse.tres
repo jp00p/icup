@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConstructionProject" load_steps=2 format=3 uid="uid://b6ug4vw8lmf"]
+
+[ext_resource type="Script" path="res://construction/base/base_construction_project.gd" id="1_c6vbs"]
+
+[resource]
+script = ExtResource("1_c6vbs")
+project_name = "Greenhouse"
+project_description = "A garden insulated and protected from the elements"
+price = 15

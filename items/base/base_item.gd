@@ -32,8 +32,19 @@ func tooltip_template() -> String:
     return "%s:\n%s" % [item_name,tooltip_description]
 
 ## Overload this function with specific items/types
-func use(_on):
-    pass
+func use(_on=null) -> void:
+    if len(effects) > 0:
+        for effect in effects:
+            if effect != "":
+                print("Processing effect: %s" % effect)
+                var expr = Expression.new()
+                var error = expr.parse(effect)
+                if error != OK:
+                    push_error(expr.get_error_text())
+                var _result = expr.execute([], self)
+    item_used.emit()
+    if consumable:
+        self.stacks -= 1
 
 func set_price(val) -> void:
     base_price = val
@@ -45,3 +56,6 @@ func set_stacks(val:int) -> void:
     if stacks <= 0 and consumable:
         Player.remove_item(self)
         item_depleted.emit()
+
+func set_flag(flag, value) -> void:
+    Flags.set(flag, bool(value))

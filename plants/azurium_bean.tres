@@ -63,10 +63,13 @@ animations = [{
 [resource]
 script = ExtResource("2_x57k7")
 plant_name = "Azurium Bean"
+seed_name = "Azurium seed"
 graphics = SubResource("SpriteFrames_pobdj")
 growth_stage = 0
-growth_max_level = 2
-growth_times = [0.1, 0.1, 0.1]
+growth_max_level = 6
+growth_times = [1, 2, 3, 4, 5, 6, 10]
 growth_requirements = []
-base_harvest_essence = 1
-base_harvest_essence_max = 2
+harvest_resource = 0
+base_harvest_amt = 1
+max_harvest_amt = 1
+gnome_allure = 0.5

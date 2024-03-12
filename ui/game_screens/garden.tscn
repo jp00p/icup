@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://ui/scripts/garden.gd" id="1_wt41i"]
 [ext_resource type="PackedScene" uid="uid://dh3b53a0encoj" path="res://ui/cooldown_button.tscn" id="2_lj5fp"]
-[ext_resource type="PackedScene" uid="uid://ctd7ekheds48w" path="res://ui/gardening/the_garden.tscn" id="5_0pbwr"]
+[ext_resource type="PackedScene" uid="uid://ctd7ekheds48w" path="res://ui/gardening/garden_bed.tscn" id="5_0pbwr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqf0d"]
 bg_color = Color(0.133333, 0.133333, 0.133333, 0.278431)
 
-[node name="Garden" type="Control" groups=["game_screen"]]
-layout_mode = 3
+[node name="Garden" type="Panel" groups=["game_screen"]]
+anchors_preset = -1
 anchor_right = 0.773
 anchor_bottom = 0.891
 offset_right = 0.447937
@@ -31,41 +31,27 @@ grow_vertical = 2
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Top"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Top/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Top"]
 layout_mode = 2
 theme_override_constants/separation = 32
 
-[node name="GardenActions" type="VBoxContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer"]
+[node name="GardenActions" type="VBoxContainer" parent="VBoxContainer/Top/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 16
+alignment = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions"]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-text = "Gardening"
-vertical_alignment = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/Top/HBoxContainer/GardenActions"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/PanelContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="PlantSeedButton" type="Button" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/PanelContainer/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(128, 0)
+[node name="PlantSeedButton" type="Button" parent="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer2"]
+custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 text = "Plant seed"
 metadata/_edit_use_anchors_ = true
 
-[node name="ChooseSeedType" type="MenuButton" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="ChooseSeedType" type="MenuButton" parent="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(192, 0)
 layout_mode = 2
@@ -74,55 +60,55 @@ size_flags_vertical = 4
 flat = false
 alignment = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/Top/HBoxContainer/GardenActions"]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="BuyGardenPlot" type="Button" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/HBoxContainer3"]
+[node name="BuyGardenPlot" type="Button" parent="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Buy a garden plot"
+text = "Expand garden"
 
-[node name="GardenPlotPrice" type="Label" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/HBoxContainer3"]
+[node name="GardenPlotPrice" type="Label" parent="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Cost: 5 HE"
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Top/HBoxContainer/GardenActions"]
 layout_mode = 2
 
-[node name="AutoPlant" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/HBoxContainer" node_paths=PackedStringArray("for_timer") instance=ExtResource("2_lj5fp")]
+[node name="AutoPlant" parent="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer" node_paths=PackedStringArray("for_timer") instance=ExtResource("2_lj5fp")]
 layout_mode = 2
 button_text = "Auto plant"
-for_timer = NodePath("../../../../../../../Timers/AutoplantTimer")
+for_timer = NodePath("../../../../../../Timers/AutoplantTimer")
 
-[node name="AutoWater" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/HBoxContainer" node_paths=PackedStringArray("for_timer") instance=ExtResource("2_lj5fp")]
+[node name="AutoWater" parent="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer" node_paths=PackedStringArray("for_timer") instance=ExtResource("2_lj5fp")]
 layout_mode = 2
 button_text = "Auto water"
-for_timer = NodePath("../../../../../../../Timers/AutowaterTimer")
+for_timer = NodePath("../../../../../../Timers/AutowaterTimer")
 
-[node name="GardenItems" type="VBoxContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer"]
+[node name="GardenItems" type="VBoxContainer" parent="VBoxContainer/Top/HBoxContainer"]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenItems"]
+[node name="Label" type="Label" parent="VBoxContainer/Top/HBoxContainer/GardenItems"]
 layout_mode = 2
-text = "Items"
+text = "Garden tools"
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenItems"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/Top/HBoxContainer/GardenItems"]
 custom_minimum_size = Vector2(296, 0)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_aqf0d")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenItems/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Top/HBoxContainer/GardenItems/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="GardenItems" type="GridContainer" parent="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenItems/PanelContainer/MarginContainer"]
+[node name="GardenItems" type="GridContainer" parent="VBoxContainer/Top/HBoxContainer/GardenItems/PanelContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
@@ -135,7 +121,7 @@ custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TheGarden" parent="VBoxContainer/Bottom" instance=ExtResource("5_0pbwr")]
+[node name="GardenBed" parent="VBoxContainer/Bottom" instance=ExtResource("5_0pbwr")]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -149,7 +135,7 @@ wait_time = 2.0
 [node name="AutoharvestTimer" type="Timer" parent="Timers"]
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="pressed" from="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/PanelContainer/MarginContainer/HBoxContainer/PlantSeedButton" to="." method="_on_plant_seed_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Top/MarginContainer/HBoxContainer/GardenActions/HBoxContainer3/BuyGardenPlot" to="." method="_on_buy_garden_plot_pressed"]
+[connection signal="pressed" from="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer2/PlantSeedButton" to="." method="_on_plant_seed_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Top/HBoxContainer/GardenActions/HBoxContainer3/BuyGardenPlot" to="." method="_on_buy_garden_plot_pressed"]
 [connection signal="timeout" from="Timers/AutoplantTimer" to="." method="_on_autoplant_timer_timeout"]
 [connection signal="timeout" from="Timers/AutowaterTimer" to="." method="_on_autowater_timer_timeout"]

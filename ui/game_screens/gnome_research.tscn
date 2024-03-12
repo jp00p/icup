@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn70wdfu37ryl"]
+
+[ext_resource type="Script" path="res://ui/scripts/gnome_research.gd" id="1_v6kbx"]
+
+[node name="GnomeResearch" type="Panel" groups=["game_screen"]]
+custom_minimum_size = Vector2(792, 684)
+anchors_preset = -1
+anchor_right = 0.773
+anchor_bottom = 0.891
+offset_right = 0.447937
+offset_bottom = -0.288025
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_v6kbx")
+
+[node name="ResearchRows" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 784.0
+offset_bottom = 676.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResearchRows"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="ResearchRows/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Scienticians:"
+
+[node name="Label2" type="Label" parent="ResearchRows/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0"

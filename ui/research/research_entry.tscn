@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c127sy3vfwl6j"]
+
+[ext_resource type="Script" path="res://ui/scripts/research_entry.gd" id="1_cxpsp"]
+[ext_resource type="PackedScene" uid="uid://dmmtf0j0fh87e" path="res://ui/assign_value_input.tscn" id="2_sorq5"]
+
+[node name="ResearchEntry" type="PanelContainer"]
+script = ExtResource("1_cxpsp")
+
+[node name="Research" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Research"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ResearchProject" type="Label" parent="Research/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Gnome biology"
+
+[node name="Progress" type="ProgressBar" parent="Research/HBoxContainer"]
+custom_minimum_size = Vector2(192, 32)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Level" type="Label" parent="Research/HBoxContainer"]
+layout_mode = 2
+text = "Level 1"
+
+[node name="AssignValue" parent="Research/HBoxContainer" instance=ExtResource("2_sorq5")]
+layout_mode = 2

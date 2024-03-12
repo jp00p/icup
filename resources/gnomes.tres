@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="BaseResource" load_steps=2 format=3 uid="uid://bpxe2np7t6yod"]
+
+[ext_resource type="Script" path="res://resources/base/base_resource.gd" id="1_np22m"]
+
+[resource]
+script = ExtResource("1_np22m")
+title = "Gnomes"
+maximum = 1000.0
+starting_value = 0.0
+speed_multiplier = 1.0
+gain_multiplier = 1.0
+reset_on_fill = false
+bounce_fill = false
+on_timer = false
+autostart = false
+timeout = 1.0
+speed = 1.0
+per_tick = 1.0
+bar_bg = Color(0, 0, 0, 1)
+bar_fg = Color(0, 1, 0, 1)
+black_text = false
+text_outline = true
+rainbow_fg = false

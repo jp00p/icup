@@ -1,32 +1,52 @@
-extends Control
+extends GameScreen
 
 var seed_index = {}
-var current_seed
+var current_seed:BasePlant
 var current_tool:BaseItem = null : set = set_current_tool
 
 func _ready() -> void:
-    Player.item_added.connect(add_item)
-    Player.item_removed.connect(build_inventory)
-    Signals.connect("harvest_essence_changed", harvest_essence_updated)
+    Player.connect("item_added", add_item)
+    Player.connect("seeds_changed", update_popup)
+    Signals.connect("resource_changed", harvest_essence_updated)
     %BuyGardenPlot.disabled = true
     update_plot_cost()
     build_seed_dropdown()
     build_inventory()
+    Player.add_seeds(Globals.PLANTS[1], 5)
+
+func update_popup():
+    print("updating popup")
+    for plant in Player.SEED_INVENTORY.keys():
+        if plant in seed_index.values():
+            var idx = seed_index.find_key(plant)
+            %ChooseSeedType.get_popup().set_item_text(idx, get_seed_name(plant))
+    var popup_idx = seed_index.find_key(current_seed)
+    update_popup_display(popup_idx)
+
+func get_seed_name(plant):
+    return "%s: %s" % [plant.seed_name, Player.SEED_INVENTORY.get(plant, "*")]
+
+func update_popup_display(idx):
+    %ChooseSeedType.get_popup().set_item_checked(idx, true)
+    %ChooseSeedType.text = %ChooseSeedType.get_popup().get_item_text(idx)
+    %ChooseSeedType.icon = %ChooseSeedType.get_popup().get_item_icon(idx)
 
 func build_seed_dropdown() -> void:
     # connect seed popup menu
     %ChooseSeedType.get_popup().id_pressed.connect(choose_seed_type)
     var seed_key = 0
-    for plant in Globals.PLANTS.values():
+    for plant in Globals.PLANTS:
         # add icon and text to dropdown menu
-        %ChooseSeedType.get_popup().add_icon_item(plant.resource.graphics.get_frame_texture("default", 6), plant.resource.plant_name, seed_key)
-        seed_index[seed_key] = plant.resource
+        %ChooseSeedType.get_popup().add_icon_item(
+            plant.graphics.get_frame_texture("default", 6),
+            get_seed_name(plant),
+            seed_key
+        )
+        #%ChooseSeedType.get_popup().add_separator("")
+        seed_index[seed_key] = plant
         seed_key += 1
-    %ChooseSeedType.get_popup().set_item_checked(0, true)
-    %ChooseSeedType.text = %ChooseSeedType.get_popup().get_item_text(0)
-    %ChooseSeedType.icon = %ChooseSeedType.get_popup().get_item_icon(0)
+    update_popup_display(0)
     current_seed = seed_index[0]
-
 
 func add_item(item) -> void:
     if item is GardenTool:
@@ -48,18 +68,15 @@ func choose_seed_type(id:int) -> void:
     %ChooseSeedType.text = seed_type_text
 
 func _on_buy_garden_plot_pressed() -> void:
-    Stats.PLAYER_MAX_PLOTS += 1
-    Stats.HARVEST_ESSENCE -= Stats.GARDEN_PLOT_PRICE
+    Stats.GARDEN_SIZE = Stats.GARDEN_SIZE * 2
+    Stats.RESOURCES[Globals.RESOURCE_TYPES.HARVEST_ESSENCE].total -= Stats.GARDEN_PLOT_PRICE
     update_plot_cost()
 
-func harvest_essence_updated() -> void:
-    if Stats.HARVEST_ESSENCE >= Stats.GARDEN_PLOT_PRICE:
-        %BuyGardenPlot.disabled = false
-    else:
-        %BuyGardenPlot.disabled = true
+func harvest_essence_updated(_type=null) -> void:
+    %BuyGardenPlot.disabled = (Stats.RESOURCES[Globals.RESOURCE_TYPES.HARVEST_ESSENCE].total >= Stats.GARDEN_PLOT_PRICE)
 
 func update_plot_cost() -> void:
-    Stats.GARDEN_PLOT_PRICE += Stats.PLAYER_MAX_PLOTS + 1
+    Stats.GARDEN_PLOT_PRICE += Stats.GARDEN_SIZE.y * 2
     %GardenPlotPrice.text = "Cost: %s HE" % Stats.GARDEN_PLOT_PRICE
 
 func set_current_tool(tool) -> void:

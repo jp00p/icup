@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2gobdg7asnwm"]
+
+[ext_resource type="Script" path="res://ui/scripts/base_game_screen.gd" id="1_1yp5g"]
+[ext_resource type="Theme" uid="uid://cylluworbostq" path="res://ui/theme/base_theme.tres" id="1_gxosa"]
+
+[node name="BaseGameScreen" type="Panel" groups=["game_screen"]]
+custom_minimum_size = Vector2(792, 684)
+anchors_preset = -1
+anchor_right = 0.773
+anchor_bottom = 0.891
+offset_right = 0.447937
+offset_bottom = -0.288025
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_gxosa")
+script = ExtResource("1_1yp5g")

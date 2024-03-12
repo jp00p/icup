@@ -1,0 +1,119 @@
+[gd_scene load_steps=2 format=3 uid="uid://fqv2fgdye3tb"]
+
+[ext_resource type="PackedScene" uid="uid://c2gobdg7asnwm" path="res://ui/game_screens/base_game_screen.tscn" id="1_8v3qk"]
+
+[node name="GnomeSacrifice" instance=ExtResource("1_8v3qk")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 212.0
+grow_horizontal = 2
+theme_override_constants/separation = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Gnome sacrifice"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer" index="1"]
+layout_mode = 2
+text = "See what happens when you pool a bunch of gnome blood in a bucket!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Gnomes to sacrifice:"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+text = "123"
+placeholder_text = "0"
+max_length = 3
+expand_to_text_length = true
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+text = "KILL"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/GridContainer" index="0"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/Panel" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/Panel/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "BRAIN SEED"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer/Panel/VBoxContainer" index="1"]
+layout_mode = 2
+text = "5 gnomes"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/Panel/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "KILL"
+
+[node name="Panel2" type="PanelContainer" parent="VBoxContainer/GridContainer" index="1"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/Panel2" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/Panel2/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "HARD SEED"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer/Panel2/VBoxContainer" index="1"]
+layout_mode = 2
+text = "25 gnomes"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/Panel2/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "KILL"
+
+[node name="Panel3" type="PanelContainer" parent="VBoxContainer/GridContainer" index="2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/GridContainer/Panel3" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer/Panel3/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "MUSCLE ROOT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/GridContainer/Panel3/VBoxContainer" index="1"]
+layout_mode = 2
+text = "33 gnomes"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/GridContainer/Panel3/VBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "KILL"

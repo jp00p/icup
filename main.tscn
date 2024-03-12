@@ -1,18 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhca2goo3nsky"]
+[gd_scene load_steps=18 format=3 uid="uid://bhca2goo3nsky"]
 
 [ext_resource type="Theme" uid="uid://cylluworbostq" path="res://ui/theme/base_theme.tres" id="1_mogjj"]
 [ext_resource type="Script" path="res://main.gd" id="1_odgmv"]
 [ext_resource type="PackedScene" uid="uid://dd6fmemoqfw07" path="res://ui/nav_button.tscn" id="2_1n4vx"]
 [ext_resource type="PackedScene" uid="uid://c8u5g4iaau7u4" path="res://ui/bar.tscn" id="2_5xccd"]
 [ext_resource type="PackedScene" uid="uid://w5bhveqt4ug8" path="res://ui/game_screens/garden.tscn" id="3_efknu"]
+[ext_resource type="Resource" uid="uid://bpxe2np7t6yod" path="res://resources/gnomes.tres" id="5_8c4d0"]
+[ext_resource type="Resource" uid="uid://b3rx3i0f8amv7" path="res://resources/scienticians.tres" id="6_ite5l"]
 [ext_resource type="Resource" uid="uid://bgomehkfdrew2" path="res://resources/harvest_essence.tres" id="6_wqnc1"]
 [ext_resource type="PackedScene" uid="uid://5l80ivlb62pi" path="res://ui/weather.tscn" id="8_0kdyk"]
 [ext_resource type="PackedScene" uid="uid://d36uaignad4pv" path="res://ui/game_screens/harvest_shop.tscn" id="8_gg6sd"]
+[ext_resource type="PackedScene" uid="uid://cn70wdfu37ryl" path="res://ui/game_screens/gnome_research.tscn" id="8_x7rul"]
+[ext_resource type="PackedScene" uid="uid://bk5rgiggorahx" path="res://ui/location.tscn" id="8_yip8b"]
+[ext_resource type="PackedScene" uid="uid://chjyyrhq2se5p" path="res://ui/game_screens/construction.tscn" id="9_13kho"]
+[ext_resource type="PackedScene" uid="uid://c2sm8p6kar2os" path="res://ui/game_screens/lemonade_stand.tscn" id="10_n8tld"]
+[ext_resource type="PackedScene" uid="uid://foabjvwud826" path="res://ui/game_screens/gnome_storage.tscn" id="12_dpf87"]
+[ext_resource type="PackedScene" uid="uid://fqv2fgdye3tb" path="res://ui/game_screens/gnome_sacrifice.tscn" id="13_7a1lt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfnjr"]
 
-[node name="Main" type="Control"]
-layout_mode = 3
+[node name="Main" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -33,29 +40,34 @@ grow_vertical = 2
 
 [node name="Wrapper" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Top" type="Panel" parent="MarginContainer/Wrapper"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Wrapper/Top"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Wrapper/Top"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Wrapper/Top/MarginContainer"]
-layout_mode = 2
 size_flags_vertical = 8
-theme_override_constants/separation = 32
-alignment = 1
+theme_override_constants/separation = 8
 
-[node name="HarvestEssence" parent="MarginContainer/Wrapper/Top/MarginContainer/HBoxContainer" instance=ExtResource("2_5xccd")]
+[node name="HarvestEssence" parent="MarginContainer/Wrapper/Top/HBoxContainer" instance=ExtResource("2_5xccd")]
+custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 resource = ExtResource("6_wqnc1")
+
+[node name="Gnomes" parent="MarginContainer/Wrapper/Top/HBoxContainer" instance=ExtResource("2_5xccd")]
+layout_mode = 2
+resource = ExtResource("5_8c4d0")
+
+[node name="Scienticians" parent="MarginContainer/Wrapper/Top/HBoxContainer" instance=ExtResource("2_5xccd")]
+layout_mode = 2
+resource = ExtResource("6_ite5l")
 
 [node name="Main" type="HBoxContainer" parent="MarginContainer/Wrapper"]
 layout_mode = 2
@@ -65,25 +77,92 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(192, 0)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Wrapper/Main/Navigation"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Wrapper/Main/Navigation"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="NavMenu" type="VBoxContainer" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2"]
 layout_mode = 2
 
-[node name="NavMenu" type="VBoxContainer" parent="MarginContainer/Wrapper/Main/Navigation/MarginContainer"]
-layout_mode = 2
-
-[node name="Garden" parent="MarginContainer/Wrapper/Main/Navigation/MarginContainer/NavMenu" instance=ExtResource("2_1n4vx")]
+[node name="Garden" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu" instance=ExtResource("2_1n4vx")]
 layout_mode = 2
 game_screen = ExtResource("3_efknu")
 screen_name = "garden"
 button_title = "Gardening"
 
-[node name="Shop" parent="MarginContainer/Wrapper/Main/Navigation/MarginContainer/NavMenu" instance=ExtResource("2_1n4vx")]
+[node name="Shop" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu" instance=ExtResource("2_1n4vx")]
 layout_mode = 2
 game_screen = ExtResource("8_gg6sd")
 screen_name = "harvestshop"
-button_title = "Harvest Shop"
+button_title = "Shop"
 
-[node name="Weather" parent="MarginContainer/Wrapper/Main/Navigation/MarginContainer" instance=ExtResource("8_0kdyk")]
+[node name="Storage" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu" instance=ExtResource("2_1n4vx")]
+layout_mode = 2
+game_screen = ExtResource("12_dpf87")
+screen_name = "gnomestorage"
+button_title = "Gnome storage"
+
+[node name="GnomeSacrifice" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu" instance=ExtResource("2_1n4vx")]
+layout_mode = 2
+game_screen = ExtResource("13_7a1lt")
+screen_name = "gnomesacrifice"
+button_title = "Sacrifice"
+
+[node name="Research" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu" instance=ExtResource("2_1n4vx")]
+layout_mode = 2
+game_screen = ExtResource("8_x7rul")
+screen_name = "gnomeresearch"
+button_title = "Research"
+
+[node name="Construction" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu" instance=ExtResource("2_1n4vx")]
+layout_mode = 2
+game_screen = ExtResource("9_13kho")
+screen_name = "construction"
+button_title = "Construction"
+
+[node name="LemonadeStand" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu" instance=ExtResource("2_1n4vx")]
+layout_mode = 2
+game_screen = ExtResource("10_n8tld")
+screen_name = "lemonadestand"
+button_title = "Lemonade stand"
+
+[node name="Button5" type="Button" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu"]
+visible = false
+layout_mode = 2
+text = "Fight Gnomes"
+
+[node name="Button6" type="Button" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu"]
+visible = false
+layout_mode = 2
+text = "The Gnome War"
+
+[node name="Button7" type="Button" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu"]
+visible = false
+layout_mode = 2
+text = "THE CONFLICT"
+
+[node name="Button8" type="Button" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu"]
+visible = false
+layout_mode = 2
+text = "THE EVENT"
+
+[node name="Button3" type="Button" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu"]
+visible = false
+layout_mode = 2
+text = "Space Travel"
+
+[node name="Button4" type="Button" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2/NavMenu"]
+visible = false
+layout_mode = 2
+text = "Time Travel"
+
+[node name="Location" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2" instance=ExtResource("8_yip8b")]
+visible = false
+layout_mode = 2
+
+[node name="Weather" parent="MarginContainer/Wrapper/Main/Navigation/VBoxContainer2" instance=ExtResource("8_0kdyk")]
+visible = false
 custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
 size_flags_horizontal = 1

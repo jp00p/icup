@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2sm8p6kar2os"]
+
+[ext_resource type="PackedScene" uid="uid://c2gobdg7asnwm" path="res://ui/game_screens/base_game_screen.tscn" id="1_co408"]
+
+[node name="LemonadeStand" instance=ExtResource("1_co408")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Price per cup"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "$"
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+text = "30"
+placeholder_text = "30"
+scroll_fit_content_height = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" index="1"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2" index="0"]
+layout_mode = 2
+text = "Begin sales"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2" index="1"]
+layout_mode = 2
+text = "Stop"
+
+[node name="Control" type="PanelContainer" parent="VBoxContainer" index="2"]
+custom_minimum_size = Vector2(512, 384)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SalesGraph" type="TextureRect" parent="VBoxContainer/Control" index="0"]
+unique_name_in_owner = true
+layout_mode = 2

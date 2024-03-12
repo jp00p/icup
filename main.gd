@@ -1,4 +1,4 @@
-extends Control
+extends Panel
 @onready var plant = preload("res://ui/gardening/plant.tscn")
 
 # Harvest Essence
@@ -108,7 +108,7 @@ func _ready():
     ## Hook up navigation and page changing
     Signals.connect("change_page", change_page)
     for nav_item in get_tree().get_nodes_in_group("nav_item"):
-        if nav_item.game_screen:
+        if is_instance_valid(nav_item.game_screen):
             var new_screen = nav_item.game_screen.instantiate()
             %GameArea.add_child(new_screen)
             new_screen.hide()

@@ -1,9 +1,9 @@
 extends Control
 
 # measurements
-var hour_length : int = 5 # ticks
+var hour_length : int = 100 # ticks
 var day_length : int = 24 # hours
-var season_length : int = 14 # days
+var season_length : int = 3 # days
 
 # timekeeping
 var local_tick : int = 0
@@ -18,7 +18,7 @@ var sunrise : int = 6
 var dusk : int = 15
 var moonrise : int = 19
 var starrise : int = 18
-var celestial_phase = "moonrise" : set = set_phase
+var celestial_phase = "moon" : set = set_phase
 var celestial_progress : int = 0
 var stars_visible : bool = true
 var star_progress : int = 0
@@ -46,12 +46,12 @@ func _ready():
 
 func advance_time():
     local_tick += 1
-    if local_tick % hour_length == 0:
+    if local_tick % Globals.TICKS_PER_HOUR == 0:
         local_tick = 0
         self.global_tick = global_tick + 1
 
 func set_global_tick(tick):
-    global_tick = int(fposmod(tick, 24))
+    global_tick = int(fposmod(tick, Globals.HOURS_IN_DAY))
     time_of_day = wrapi(global_tick,1,13)
     ordinal = "AM"
     if global_tick > 11:
@@ -65,11 +65,12 @@ func set_global_tick(tick):
 func new_day():
     set_weather()
     season_tick += 1
-    if season_tick % season_length == 0:
+    if season_tick == Globals.DAYS_IN_SEASON:
         next_season()
 
-func next_season():
-    pass
+func next_season() -> void:
+    season_tick = 0
+    season = wrapi(season + 1, 0, Globals.SEASONS.keys().size())
 
 func advance_clouds():
     pass
@@ -89,7 +90,6 @@ func advance_celestial_objects():
     clouds_anim.frame = 0
     if overcast and stars_visible:
         clouds_anim.frame = 1
-
     celestial_progress += 1
     celestial_anim.frame = celestial_progress
     stars_rect.visible = stars_visible && !overcast
@@ -98,14 +98,15 @@ func advance_celestial_objects():
         stars_anim.frame = star_progress
 
 func set_weather():
-    weather = Globals.pick_weather(Globals.SEASONS.WINTER)
+    weather = Globals.pick_weather(season)
     var precip = weather[0]
     var clouds = weather[1]
-    print("%s %s" % [precip, clouds])
+    overcast = false
+    raining = false
+    #print("%s %s" % [precip, clouds])
     if precip == "CLEAR":
         weather_rect.hide()
         weather_anim.stop()
-        raining = false
     else:
         weather_rect.show()
         weather_anim.animation = precip.to_lower()
@@ -125,7 +126,7 @@ func set_phase(phase):
     celestial_progress = 0
 
 func set_clock_text():
-    %Label.text = "%s %s\n%s/%s" % [time_of_day, ordinal, weather[0].to_lower(), weather[1].to_lower()]
+    %Label.text = "%s\n%s %s\n%s/%s" % [Globals.SEASONS.keys()[season], time_of_day, ordinal, weather[0].to_lower(), weather[1].to_lower()]
 
 func get_spriteframes_texture(frames:SpriteFrames, anim_name:String, frame:int) -> Texture2D:
     return frames.get_frame_texture(anim_name, frame)

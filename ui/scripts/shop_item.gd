@@ -11,7 +11,7 @@ func _ready() -> void:
     if is_instance_valid(base_item):
         base_item.setup_local_to_scene()
         self.name = base_item.item_name
-        Signals.harvest_essence_changed.connect(check_affordability)
+        Signals.resource_changed.connect(check_affordability)
         %ItemName.text = base_item.item_name
         %ItemDescription.text = base_item.tooltip_description
         %Icon.texture = ImageTexture.create_from_image(base_item.item_icon.get_image())
@@ -23,6 +23,8 @@ func _ready() -> void:
 func purchase() -> void:
     Player.add_item(base_item, stacks)
     spend_resource_cost()
+    if base_item.auto_use:
+        base_item.use()
     if not repeatable_purchase:
         queue_free()
 
@@ -45,13 +47,8 @@ func set_price_text() -> void:
 
 ## Check if player has the required resource
 func player_has_enough_resources() -> bool:
-    match required_resource:
-        Globals.RESOURCE_TYPES.HARVEST_ESSENCE:
-            return Stats.HARVEST_ESSENCE >= base_item.base_price
-    return false
+    return Stats.RESOURCES[required_resource].total >= base_item.base_price
 
 ## Spend the resource
 func spend_resource_cost() -> void:
-    match required_resource:
-        Globals.RESOURCE_TYPES.HARVEST_ESSENCE:
-            Stats.HARVEST_ESSENCE -= base_item.base_price
+    Stats.set_resource(required_resource, Stats.RESOURCES[required_resource].total - base_item.base_price)

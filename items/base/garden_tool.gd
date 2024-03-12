@@ -4,8 +4,9 @@ extends BaseItem
 class_name GardenTool
 
 ## Use on plants
-func use(plant:BasePlant):
-    if len(effects) > 0:
+func use(plant=null):
+    # plant could also be an empty plot
+    if len(effects) > 0 and plant != null:
         for effect in effects:
             if effect != "":
                 var expr = Expression.new()

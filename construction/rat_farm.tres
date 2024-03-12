@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ConstructionProject" load_steps=2 format=3 uid="uid://c04ae8gq1kamh"]
+
+[ext_resource type="Script" path="res://construction/base/base_construction_project.gd" id="1_ccr86"]
+
+[resource]
+script = ExtResource("1_ccr86")
+project_name = "Rat farm"
+project_description = "A place where you can force rats to make love to other rats they may not be attracted to"
+price = 50

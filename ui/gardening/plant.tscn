@@ -46,5 +46,3 @@ stretch_mode = 5
 unique_name_in_owner = true
 wait_time = 0.75
 autostart = true
-
-[connection signal="timeout" from="Container/GrowthTimer" to="." method="_on_growth_timer_timeout"]

@@ -63,10 +63,13 @@ animations = [{
 [resource]
 script = ExtResource("1_726d2")
 plant_name = "Crunchette"
+seed_name = "Crunch seed"
 graphics = SubResource("SpriteFrames_1ncds")
 growth_stage = 0
 growth_max_level = 6
-growth_times = [2, 2, 3, 3, 4, 4, 8]
+growth_times = [1, 2, 3, 4, 5, 6, 10]
 growth_requirements = []
-base_harvest_essence = 1
-base_harvest_essence_max = 1
+harvest_resource = 0
+base_harvest_amt = 1
+max_harvest_amt = 1
+gnome_allure = 0.0

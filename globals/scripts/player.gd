@@ -21,7 +21,9 @@ func remove_item(item) -> void:
     item_removed.emit(item)
 
 func add_seeds(plant, amt=1):
-    SEED_INVENTORY[plant] = amt
+    if plant not in SEED_INVENTORY.keys():
+        SEED_INVENTORY[plant] = 0
+    SEED_INVENTORY[plant] += amt
     seeds_changed.emit()
 
 func use_seed(plant):

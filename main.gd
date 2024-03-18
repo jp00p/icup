@@ -105,7 +105,6 @@ extends Panel
 
 
 func _ready():
-    ## Hook up navigation and page changing
     Signals.connect("change_page", change_page)
     for nav_item in get_tree().get_nodes_in_group("nav_item"):
         if is_instance_valid(nav_item.game_screen):
@@ -113,6 +112,7 @@ func _ready():
             %GameArea.add_child(new_screen)
             new_screen.hide()
             Globals.GAME_PAGES[new_screen.name.to_lower()] = new_screen
+
 
 ## Change game page
 func change_page(page_name):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhca2goo3nsky"]
+[gd_scene load_steps=19 format=3 uid="uid://bhca2goo3nsky"]
 
 [ext_resource type="Theme" uid="uid://cylluworbostq" path="res://ui/theme/base_theme.tres" id="1_mogjj"]
 [ext_resource type="Script" path="res://main.gd" id="1_odgmv"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c2sm8p6kar2os" path="res://ui/game_screens/lemonade_stand.tscn" id="10_n8tld"]
 [ext_resource type="PackedScene" uid="uid://foabjvwud826" path="res://ui/game_screens/gnome_storage.tscn" id="12_dpf87"]
 [ext_resource type="PackedScene" uid="uid://fqv2fgdye3tb" path="res://ui/game_screens/gnome_sacrifice.tscn" id="13_7a1lt"]
+[ext_resource type="PackedScene" uid="uid://e5w4e1ehsabc" path="res://ui/logging.tscn" id="17_ywnfm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tfnjr"]
 
@@ -174,3 +175,5 @@ custom_minimum_size = Vector2(792, 0)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_styles/panel = SubResource("StyleBoxEmpty_tfnjr")
+
+[node name="Logging" parent="." instance=ExtResource("17_ywnfm")]

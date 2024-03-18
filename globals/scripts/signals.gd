@@ -13,3 +13,4 @@ signal auto_water
 signal garden_tool_added(item)
 signal resource_changed(type)
 signal seed_inventory_changed
+signal add_log(text)

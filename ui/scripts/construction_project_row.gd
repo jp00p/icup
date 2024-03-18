@@ -10,7 +10,7 @@ func _ready() -> void:
         %ProjectName.text = project.project_name
         %Description.text = project.project_description
 
-func check_price():
+func check_price(_type=null):
     %Build.disabled = !player_can_afford()
 
 func player_can_afford() -> bool:

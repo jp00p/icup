@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5fg5sw8kwdn0"]
+
+[ext_resource type="Script" path="res://ui/scripts/gnome_sacrifice_entry.gd" id="1_457vp"]
+
+[node name="GnomeSacrificeEntry" type="PanelContainer"]
+script = ExtResource("1_457vp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "BRAIN SEED"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Cost" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+
+[node name="CostLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Gnomes"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "KILL"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

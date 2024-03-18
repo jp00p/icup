@@ -13,3 +13,4 @@ func sales_tick() -> void:
     var y = randf_range(0, 1)
     #sales_graph.draw_line(Vector2(tick, y),)
     #plot.add_point(Vector2(tick, y))
+

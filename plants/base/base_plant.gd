@@ -33,15 +33,15 @@ var ready_to_harvest:bool = false : set = set_ready_to_harvest
 var quality:float = 1.0
 var current_frame
 
-var harvest_essence_average:int = 0
+var harvest_average:int = 0
 
 func _ready() -> void:
     growth_times.resize(growth_max_level)
     resource_local_to_scene = true
-    harvest_essence_average = round((base_harvest_amt + max_harvest_amt) / 2)
+    harvest_average = round((base_harvest_amt + max_harvest_amt) / 2)
 
 func harvest_value() -> int:
-    return round(randi_range(base_harvest_amt, max_harvest_amt) * quality)
+    return randi_range(base_harvest_amt, max_harvest_amt)
 
 func spawns_gnome() -> bool:
     return randf() >= gnome_allure

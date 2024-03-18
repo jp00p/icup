@@ -52,15 +52,25 @@ func _gui_input(event) -> void:
 func harvest() -> void:
     if plant_resource.ready_to_harvest:
         var particles = plant_harvest_particles.instantiate()
-        harvested.emit(self, plant_resource.harvest_value())
-        Stats.set_resource(Globals.RESOURCE_TYPES.HARVEST_ESSENCE, Stats.RESOURCES[Globals.RESOURCE_TYPES.HARVEST_ESSENCE].total + plant_resource.harvest_value())
+        var harvest_amt = plant_resource.harvest_value()
+        var log_string = "%s harvested! - gained %s %s" % [plant_resource.plant_name, harvest_amt, Stats.RESOURCES[plant_resource.harvest_resource].title]
+        harvested.emit(self, harvest_amt)
+        Stats.add_resource(
+            plant_resource.harvest_resource,
+            harvest_amt
+        )
         if plant_resource.spawns_gnome():
             if not Flags.GNOMES_UNLOCKED:
                 Flags.GNOMES_UNLOCKED = true
             spawn_gnome_graphic()
-            Stats.set_resource(Globals.RESOURCE_TYPES.GNOMES, Stats.RESOURCES[Globals.RESOURCE_TYPES.GNOMES].total + 1)
+            Stats.add_resource(
+                Globals.RESOURCE_TYPES.GNOMES,
+                1
+            )
+            log_string += " and 1 gnome!"
         particles.position = position + Vector2(32,32)
         get_parent().add_child(particles)
+        Signals.add_log.emit(log_string)
 
 func spawn_gnome_graphic() -> void:
     var gnomey = gnome_graphic.instantiate()

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://e5w4e1ehsabc"]
+
+[ext_resource type="Script" path="res://ui/scripts/logging.gd" id="1_34dfr"]
+
+[node name="Logging" type="CanvasLayer"]
+offset = Vector2(2, 726)
+transform = Transform2D(1, 0, 0, 1, 2, 726)
+script = ExtResource("1_34dfr")
+
+[node name="LogEntries" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(320, 0)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -768.0
+offset_right = 320.0
+offset_bottom = -728.0
+grow_vertical = 0

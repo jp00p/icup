@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_eqkxu")
 title = "Scienticians"
-maximum = 10
+maximum = 1000
 starting_value = 0
-total = 5
+total = 0
 speed_multiplier = 1.0
 gain_multiplier = 1.0
 reset_on_fill = false

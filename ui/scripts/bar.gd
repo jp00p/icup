@@ -1,4 +1,3 @@
-@tool
 extends PanelContainer
 
 @onready var bar = %ProgressBar
@@ -11,7 +10,9 @@ var styles_fg:StyleBoxFlat
 
 func _ready():
     # set values
+    Signals.connect("resource_changed", update_bar)
     if is_instance_valid(resource):
+
         bar.value = int(resource.total)
         bar.max_value = resource.maximum
 
@@ -39,14 +40,16 @@ func _ready():
             timer.connect("timeout", resource.tick)
             if resource.autostart:
                 timer.start()
+        update_bar()
+
+func update_bar(_type=null):
+    bar.value = float(resource.total)
+    bar.max_value = resource.maximum
+    bar_text.text = "%s" % resource.total
 
 func _process(_delta):
-    if is_instance_valid(resource):
-        bar.value = float(resource.total)
-        bar.max_value = resource.maximum
-        bar_text.text = "%s" % resource.total
-        if resource.rainbow_fg:
-            styles_fg.bg_color.h += 0.0025
+    if resource.rainbow_fg:
+        styles_fg.bg_color.h += 0.0025
 
 func _make_custom_tooltip(_for_text="null"):
     var tooltip = preload("res://ui/tooltip.tscn").instantiate()

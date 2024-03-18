@@ -37,7 +37,7 @@ func on_price_change(_val) -> void:
     set_price_text()
 
 ## Disable button if player can't afford
-func check_affordability() -> void:
+func check_affordability(_type=null) -> void:
     %Purchase.disabled = !player_has_enough_resources()
 
 ## Set text on price button

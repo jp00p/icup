@@ -64,10 +64,3 @@ right_click={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-
-[script_panel_plus]
-
-panel_settings/svg_icons=false
-panel_settings/script_decorations=true
-panel_settings/emoji_icons=true
-panel_settings/show_method_list=false

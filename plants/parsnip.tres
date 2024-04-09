@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="BasePlant" load_steps=8 format=3 uid="uid://blks20f6p5ski"]
+
+[ext_resource type="Texture2D" uid="uid://f45ptj7wimxu" path="res://graphics/crops/Parsnip_Stage_1.png" id="1_uqi4g"]
+[ext_resource type="Texture2D" uid="uid://cqevfngbo1uf" path="res://graphics/crops/Parsnip_Stage_2.png" id="2_uk8xm"]
+[ext_resource type="Texture2D" uid="uid://dvwf7yxa31iyn" path="res://graphics/crops/Parsnip_Stage_3.png" id="3_iptb1"]
+[ext_resource type="Texture2D" uid="uid://oimme3q7lsb8" path="res://graphics/crops/Parsnip_Stage_4.png" id="4_ctkey"]
+[ext_resource type="Texture2D" uid="uid://ihmbrjjwcpum" path="res://graphics/crops/Parsnip_Stage_5.png" id="5_nqear"]
+[ext_resource type="Script" path="res://plants/base/base_plant.gd" id="6_1lr1n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f04t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uqi4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uk8xm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iptb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ctkey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nqear")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("6_1lr1n")
+plant_name = "Parsnip"
+seed_name = "Parsnip seed"
+graphics = SubResource("SpriteFrames_f04t5")
+growth_stage = 0
+growth_max_level = 4
+growth_times = [1, 1, 2, 2]
+growth_requirements = []
+harvest_resource = 0
+base_harvest_amt = 10
+max_harvest_amt = 20
+gnome_allure = 0.0

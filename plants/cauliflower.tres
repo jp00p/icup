@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="BasePlant" load_steps=9 format=3 uid="uid://bu71e0op7535b"]
+
+[ext_resource type="Texture2D" uid="uid://b5pvy2l05eysd" path="res://graphics/crops/Cauliflower_Stage_1.png" id="1_c2m3t"]
+[ext_resource type="Script" path="res://plants/base/base_plant.gd" id="1_sayg2"]
+[ext_resource type="Texture2D" uid="uid://dbbcxm4n2d84f" path="res://graphics/crops/Cauliflower_Stage_2.png" id="2_qclue"]
+[ext_resource type="Texture2D" uid="uid://caqm562atomk5" path="res://graphics/crops/Cauliflower_Stage_3.png" id="3_mcyyc"]
+[ext_resource type="Texture2D" uid="uid://bp5o317atr706" path="res://graphics/crops/Cauliflower_Stage_4.png" id="4_mxdf1"]
+[ext_resource type="Texture2D" uid="uid://gp057r1urxvv" path="res://graphics/crops/Cauliflower_Stage_5.png" id="5_vl3mk"]
+[ext_resource type="Texture2D" uid="uid://c7l6r8nfxl8ti" path="res://graphics/crops/Cauliflower_Stage_6.png" id="6_7glb1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjkxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c2m3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qclue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mcyyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mxdf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vl3mk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7glb1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_sayg2")
+plant_name = "Cauliflower"
+seed_name = "Cauliflower seed"
+graphics = SubResource("SpriteFrames_hjkxt")
+growth_stage = 0
+growth_max_level = 5
+growth_times = [12, 12, 12, 12, 12]
+growth_requirements = []
+harvest_resource = 0
+base_harvest_amt = 1
+max_harvest_amt = 1
+gnome_allure = 0.0

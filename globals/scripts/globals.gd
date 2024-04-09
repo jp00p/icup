@@ -98,7 +98,11 @@ func pick_weather(season:SEASONS=SEASONS.SPRING) -> Array:
 @onready var PLANTS:Array = [
     load("res://plants/azurium_bean.tres"),
     load("res://plants/brainroot.tres"),
-    load("res://plants/crunchette.tres")
+    load("res://plants/crunchette.tres"),
+    load("res://plants/parsnip.tres"),
+    load("res://plants/cauliflower.tres"),
+    load("res://plants/pumpkin.tres")
+
 ]
 #endregion
 

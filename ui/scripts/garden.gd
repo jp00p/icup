@@ -34,11 +34,13 @@ func update_popup_display(idx):
 func build_seed_dropdown() -> void:
     # connect seed popup menu
     %ChooseSeedType.get_popup().id_pressed.connect(choose_seed_type)
+    %ChooseSeedType.get_popup().add_theme_constant_override("icon_max_width", 16)
     var seed_key = 0
     for plant in Globals.PLANTS:
         # add icon and text to dropdown menu
+        #%ChooseSeedType.get_popup()
         %ChooseSeedType.get_popup().add_icon_item(
-            plant.graphics.get_frame_texture("default", 6),
+            plant.graphics.get_frame_texture("default", (plant.graphics.get_frame_count("default")-1)),
             get_seed_name(plant),
             seed_key
         )

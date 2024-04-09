@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="BasePlant" load_steps=9 format=3 uid="uid://c4ka08044coiu"]
+
+[ext_resource type="Texture2D" uid="uid://cy2qq6u482fci" path="res://graphics/crops/Pumpkin_Stage_1.png" id="1_6w5fy"]
+[ext_resource type="Script" path="res://plants/base/base_plant.gd" id="1_o34cl"]
+[ext_resource type="Texture2D" uid="uid://c8cuydpt1vlr7" path="res://graphics/crops/Pumpkin_Stage_2.png" id="2_x6ym5"]
+[ext_resource type="Texture2D" uid="uid://oajy4xr7bmtj" path="res://graphics/crops/Pumpkin_Stage_3.png" id="3_vdbcm"]
+[ext_resource type="Texture2D" uid="uid://80hvfwei77w0" path="res://graphics/crops/Pumpkin_Stage_4.png" id="4_fjj1k"]
+[ext_resource type="Texture2D" uid="uid://nnr34mw48skb" path="res://graphics/crops/Pumpkin_Stage_5.png" id="5_y1tx7"]
+[ext_resource type="Texture2D" uid="uid://c6q4l4eoe8l0k" path="res://graphics/crops/Pumpkin_Stage_6.png" id="6_p70jg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m3ixh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6w5fy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x6ym5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vdbcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjj1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y1tx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p70jg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_o34cl")
+plant_name = "Pumpkin"
+seed_name = "Pumpkin seed"
+graphics = SubResource("SpriteFrames_m3ixh")
+growth_stage = 0
+growth_max_level = 5
+growth_times = [2, 2, 3, 3, 5]
+growth_requirements = []
+harvest_resource = 0
+base_harvest_amt = 5
+max_harvest_amt = 5
+gnome_allure = 0.0

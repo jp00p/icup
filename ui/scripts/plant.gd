@@ -24,6 +24,7 @@ func _ready() -> void:
 
 func _process(_delta) -> void:
     if plant_resource:
+        # draw current stage of growth
         image.texture = plant_resource.current_frame
     queue_redraw()
 
@@ -40,6 +41,7 @@ func _on_growth_timer_timeout() -> void:
     if plant_resource.growth_stage < plant_resource.growth_max_level && plant_resource.check_growth_requirements():
         plant_resource.growth_stage += 1
     growth_timer.wait_time = plant_resource.growth_times[plant_resource.growth_stage]
+
 
 func _gui_input(event) -> void:
     ## On click

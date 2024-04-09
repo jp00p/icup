@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://ui/scripts/plant.gd" id="1_1hkhq"]
 [ext_resource type="Texture2D" uid="uid://svfj8xaxhb8c" path="res://graphics/fertilized.png" id="2_28ac1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrg58"]
-bg_color = Color(0.419608, 0.247059, 0.00784314, 0.105882)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8u7e1"]
 
 [node name="Plant" type="Control" groups=["garden_plant"]]
 clip_contents = true
@@ -16,18 +15,27 @@ offset_bottom = 32.0
 script = ExtResource("1_1hkhq")
 
 [node name="Container" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+clip_contents = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_lrg58")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8u7e1")
 
 [node name="Fertilizer" type="TextureRect" parent="Container"]
 unique_name_in_owner = true
 visible = false
+clip_contents = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_28ac1")
@@ -37,6 +45,7 @@ stretch_mode = 5
 [node name="Image" type="TextureRect" parent="Container"]
 unique_name_in_owner = true
 texture_filter = 1
+clip_contents = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 expand_mode = 2
